@@ -39,10 +39,9 @@ public class App implements Runnable {
         } else if (versionRequested) {
             CommandLine.usage(this, System.out);
         } else {
-            var data1 = Utils.getData(filepath1);
-            var data2 = Utils.getData(filepath2);
-            System.out.println("Comparing files: " + data1 + " and " + data2);
-            System.out.println("Output format: " + format);
+            var result = Differ.generate(filepath1, filepath2);
+            System.out.println(result);
+
         }
     }
 }

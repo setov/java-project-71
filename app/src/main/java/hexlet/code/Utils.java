@@ -13,13 +13,22 @@ import java.nio.file.Files;
 public class Utils {
 
     private static Map<String, Object> parse(String content, String type) throws Exception {
-        ObjectMapper mapper = switch (type) {
-            case "json" -> new ObjectMapper();
-            case "yaml", "yml" -> new ObjectMapper(new YAMLFactory());
-            default -> throw new UnsupportedOperationException("Unsupported file type: " + type);
-        };
+        ObjectMapper mapper;
+
+        switch (type) {
+            case "json":
+                mapper = new ObjectMapper();
+                break;
+            case "yaml":
+            case "yml":
+                mapper = new ObjectMapper(new YAMLFactory());
+                break;
+            default:
+                throw new UnsupportedOperationException("Unsupported file type: " + type);
+        }
         return mapper.readValue(content, new TypeReference<Map<String, Object>>() {});
     }
+
 
     private static String readFile(String filepath) {
         try {
@@ -43,14 +52,6 @@ public class Utils {
             // Возвращаем пустую карту в случае ошибки
             return Collections.emptyMap();
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
-        var data = getData("beforeNested.json");
-        System.out.println(data);
-        System.out.println();
-
     }
 }
 
