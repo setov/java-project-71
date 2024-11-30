@@ -1,17 +1,20 @@
 package hexlet.code;
 
-import java.util.*;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import hexlet.code.model.Node;
 
 public class AstData {
-
-	   // Union of two maps
-	   private static Set<String> union(Map<String, ?> data1, Map<String, ?> data2) {
+    private static Set<String> union(Map<String, ?> data1, Map<String, ?> data2) {
         return Stream.concat(data1.keySet().stream(), data2.keySet().stream())
-                     .collect(Collectors.toSet());
+    .collect(Collectors.toSet());
     }
 
     // Generate the abstract syntax tree

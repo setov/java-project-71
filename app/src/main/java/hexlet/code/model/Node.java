@@ -3,11 +3,11 @@ package hexlet.code.model;
 import java.util.List;
 
 public class Node {
-  public  String type;
-  public  String name;
-  public  Object valueBefore;
-  public  Object valueAfter;
-  public  List<Node> children;
+    public  String type;
+    public  String name;
+    public  Object valueBefore;
+    public  Object valueAfter;
+    public  List<Node> children;
 
     public Node(String type, String name, Object valueBefore, Object valueAfter, List<Node> children) {
         this.type = type;

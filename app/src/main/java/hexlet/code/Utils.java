@@ -26,7 +26,7 @@ public class Utils {
             default:
                 throw new UnsupportedOperationException("Unsupported file type: " + type);
         }
-        return mapper.readValue(content, new TypeReference<Map<String, Object>>() {});
+        return mapper.readValue(content, new TypeReference<Map<String, Object>>() { });
     }
 
 
@@ -49,7 +49,6 @@ public class Utils {
         try {
             return loadData(filepath);
         } catch (Exception e) {
-            // Возвращаем пустую карту в случае ошибки
             return Collections.emptyMap();
         }
     }

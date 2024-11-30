@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import hexlet.code.model.Node;
 
 public class Differ {
-	private static String stringify(List<Node> nodes) {
+    private static String stringify(List<Node> nodes) {
         var list = nodes.stream()
                 .map(Differ::formatNode)
                 .filter(s -> !s.isEmpty())
@@ -35,11 +35,10 @@ public class Differ {
                 throw new UnsupportedOperationException("Unsupported Node type: " + type);
         }
     }
-	public static String generate(String filePath1, String filePath2) {
-		var data1 = Utils.getData(filePath1);
-		var data2 = Utils.getData(filePath2);
-
-		List<Node> ast = AstData.genAst(data1, data2);
-		return stringify(ast);
-	}
+    public static String generate(String filePath1, String filePath2) {
+        var data1 = Utils.getData(filePath1);
+        var data2 = Utils.getData(filePath2);
+        List<Node> ast = AstData.genAst(data1, data2);
+        return stringify(ast);
+    }
 }
