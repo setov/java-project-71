@@ -21,8 +21,8 @@ jobs:
           arguments: build
           build-root-directory: app
       - run: ./app/gradlew checkstyleMain # Adjusted path
-      - run: ./app/gradlew test # Adjusted path
         working-directory: app
+      - run: ./app/gradlew test # Adjusted path
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
