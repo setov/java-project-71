@@ -25,10 +25,15 @@ class DifferTest {
 
     @Test
     public void testGenerate() throws Exception {
-        var file1Path = getFixturePath("flatFile1.json");
-        var file2Path = getFixturePath("flatFile2.json");
-        var actual = generate(file1Path.toString(), file2Path.toString());
-        assertEquals(expected, actual);
+        var file1PathJson = getFixturePath("flatFile1.json");
+        var file2PathJson = getFixturePath("flatFile2.json");
+        var actualJson = generate(file1PathJson.toString(), file2PathJson.toString());
+        assertEquals(expected, actualJson);
+
+        var file1PathYaml = getFixturePath("flatFile1.yaml");
+        var file2PathYaml = getFixturePath("flatFile2.yaml");
+        var actualYaml = generate(file1PathYaml.toString(), file2PathYaml.toString());
+        assertEquals(expected, actualYaml);
     }
 
     private static Path getFixturePath(String fileName) {
