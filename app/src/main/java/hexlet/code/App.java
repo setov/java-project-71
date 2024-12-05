@@ -39,7 +39,7 @@ public class App implements Runnable {
         } else if (versionRequested) {
             CommandLine.usage(this, System.out);
         } else {
-            var result = Differ.generate(filepath1, filepath2);
+            var result = Differ.generate(filepath1, filepath2, format);
             System.out.println(result);
 
         }

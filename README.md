@@ -8,3 +8,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/febbb56bcc9ecc12900c/test_coverage)](https://codeclimate.com/github/setov/java-project-71/test_coverage)
 
 [Compare flat files (JSON)](https://asciinema.org/a/dPb0PbUNDM3WeLPNxZ2qOBTOk)
+
+[Compare complex files (JSON)](https://asciinema.org/a/Jyh5B6INfJPBA4eRwOwUxsEXi)

@@ -1,44 +1,24 @@
 package hexlet.code;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import hexlet.code.model.Node;
+import static hexlet.code.formatters.Stylish.stylish;
 
 public class Differ {
-    private static String stringify(List<Node> nodes) {
-        var list = nodes.stream()
-                .map(Differ::formatNode)
-                .filter(s -> !s.isEmpty())
-                .collect(Collectors.joining("\n"));
-        return "{\n" + list + "\n}";
-    }
-
-    private static String formatNode(Node node) {
-        var name = node.name;
-        var type = node.type;
-        var valueBefore = node.valueBefore;
-        var valueAfter = node.valueAfter;
-
-        switch (type) {
-            case "removed":
-                return String.format("  - %s: %s", name, valueBefore);
-            case "unchanged":
-                return String.format("    %s: %s", name, valueBefore);
-            case "updated":
-                String beforeFormat = String.format("  - %s: %s", name, valueBefore);
-                String afterFormat = String.format("  + %s: %s", name, valueAfter);
-                return String.join("\n", beforeFormat, afterFormat);
-            case "added":
-                return String.format("  + %s: %s", name, valueAfter);
+    public static String render(List<Node> ast, String format) {
+        switch (format) {
+            case "stylish":
+                return stylish(ast);
             default:
-                throw new UnsupportedOperationException("Unsupported Node type: " + type);
+                throw new UnsupportedOperationException("Unsupported file format: " + format);
         }
     }
-    public static String generate(String filePath1, String filePath2) {
+
+    public static String generate(String filePath1, String filePath2, String format) {
         var data1 = Utils.getData(filePath1);
         var data2 = Utils.getData(filePath2);
         List<Node> ast = AstData.genAst(data1, data2);
-        return stringify(ast);
+        return render(ast, format);
     }
 }
