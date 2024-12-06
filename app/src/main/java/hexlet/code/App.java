@@ -13,19 +13,19 @@ import picocli.CommandLine.Parameters;
 public class App implements Runnable {
 
     @Option(names = {"-h", "--help"}, usageHelp = true, description = "Show this help message and exit.")
-    boolean helpRequested;
+    private boolean helpRequested;
 
     @Option(names = {"-V", "--version"}, versionHelp = true, description = "Print version information and exit.")
-    boolean versionRequested;
+    private boolean versionRequested;
 
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]", defaultValue = "stylish")
-    String format;
+    private String format;
 
     @Parameters(index = "0", description = "path to first file")
-    String filepath1;
+    private String filepath1;
 
     @Parameters(index = "1", description = "path to second file")
-    String filepath2;
+    private String filepath2;
 
     public static void main(String[] args) {
         CommandLine commandLine = new CommandLine(new App());
@@ -33,7 +33,7 @@ public class App implements Runnable {
     }
 
     @Override
-    public void run() {
+    public final void run() {
         if (helpRequested) {
             CommandLine.usage(this, System.out);
         } else if (versionRequested) {

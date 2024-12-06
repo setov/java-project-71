@@ -17,10 +17,10 @@ public class Plain {
     }
 
     private static String formatNodePlain(Node node) {
-        var name = node.name;
-        var type = node.type;
-        var valueBefore = getFormattedValue(node.valueBefore);
-        var valueAfter = getFormattedValue(node.valueAfter);
+        var name = node.getName();
+        var type = node.getType();
+        var valueBefore = getFormattedValue(node.getValueBefore());
+        var valueAfter = getFormattedValue(node.getValueAfter());
 
         return switch (type) {
             case "removed" -> String.format("Property '%s' was removed", name);

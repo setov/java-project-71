@@ -15,10 +15,10 @@ public class Stylish {
     }
 
     private static String formatNodeStylish(Node node) {
-        var name = node.name;
-        var type = node.type;
-        var valueBefore = node.valueBefore;
-        var valueAfter = node.valueAfter;
+        var name = node.getName();
+        var type = node.getType();
+        var valueBefore = node.getValueBefore();
+        var valueAfter = node.getValueAfter();
 
         switch (type) {
             case "removed":
