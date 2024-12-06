@@ -12,4 +12,8 @@ public class Differ {
         List<Node> ast = AstData.genAst(data1, data2);
         return render(ast, format);
     }
+
+    public static String generate(String filePath1, String filePath2) {
+        return generate(filePath1, filePath2, "stylish");
+    }
 }

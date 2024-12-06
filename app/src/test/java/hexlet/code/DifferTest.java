@@ -52,6 +52,9 @@ class DifferTest {
 
         var actualYmlPlain = generate(file1PathYml.toString(), file2PathYml.toString(), formatPlain);
         assertEquals(expectedPlain, actualYmlPlain);
+
+        var actualJsonDefault = generate(file1PathJson.toString(), file2PathJson.toString());
+        assertEquals(expectedStylish, actualJsonDefault);
     }
 
     private static Path getFixturePath(String fileName) {

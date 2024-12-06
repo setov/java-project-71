@@ -17,7 +17,9 @@ public class Formatters {
             case "json":
                 return convertToJson(ast);
             default:
-                throw new UnsupportedOperationException("Unsupported file format: " + format);
+                throw new UnsupportedOperationException(
+                String.format("Unsupported file format: %s%nSupported formats: stylish, plain, json", format)
+            );
         }
     }
 }

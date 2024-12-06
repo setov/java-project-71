@@ -12,3 +12,5 @@
 [Compare complex files (JSON)](https://asciinema.org/a/Jyh5B6INfJPBA4eRwOwUxsEXi)
 
 [Compare complex files plain format (JSON)](https://asciinema.org/a/u1UpPZoe0fwFzR0xYAQNQNuTK)
+
+[Compare complex files json format (JSON)](https://asciinema.org/a/6lwam98mocdWatCdyBttgUpwx)
