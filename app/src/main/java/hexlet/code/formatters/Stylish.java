@@ -8,13 +8,13 @@ import hexlet.code.model.Node;
 public class Stylish {
     public static String stylish(List<Node> nodes) {
         var list = nodes.stream()
-                .map(Stylish::formatNode)
+                .map(Stylish::formatNodeStylish)
                 .filter(s -> !s.isEmpty())
                 .collect(Collectors.joining("\n"));
         return "{\n" + list + "\n}";
     }
 
-    private static String formatNode(Node node) {
+    private static String formatNodeStylish(Node node) {
         var name = node.name;
         var type = node.type;
         var valueBefore = node.valueBefore;
